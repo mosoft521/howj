@@ -31,7 +31,8 @@ public class HBasePutTest {
 
     @Test
     public void testGet() {
-        Result result = HBaseUtil.getRow("logs", HBase.generateRowkey("rowKey"));
+//        Result result = HBaseUtil.getRow("logs", HBase.generateRowkey("rowKey"));
+        Result result = HBaseUtil.getRow("logs", "rowKey".getBytes());
         HBaseUtil.formatRow(result.raw());
     }
 
