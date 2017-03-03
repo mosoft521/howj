@@ -24,7 +24,6 @@ import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.client.Table;
 import org.apache.hadoop.hbase.filter.FilterList;
 import org.apache.hadoop.hbase.filter.PageFilter;
-import org.apache.hadoop.hbase.io.compress.Compression;
 import org.apache.hadoop.hbase.protobuf.generated.HBaseProtos;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.slf4j.Logger;
@@ -140,7 +139,7 @@ public class HBaseUtil {
             HTableDescriptor tableDesc = new HTableDescriptor(TableName.valueOf(tableName));
             for (int i = 0; i < cfs.length; i++) {
                 HColumnDescriptor hColumnDescriptor = new HColumnDescriptor(cfs[i]);
-                hColumnDescriptor.setCompressionType(Compression.Algorithm.SNAPPY);
+//                hColumnDescriptor.setCompressionType(Compression.Algorithm.SNAPPY);
                 hColumnDescriptor.setMaxVersions(1);
                 tableDesc.addFamily(hColumnDescriptor);
             }
@@ -170,7 +169,7 @@ public class HBaseUtil {
             HTableDescriptor tableDesc = new HTableDescriptor(TableName.valueOf(tableName));
             for (int i = 0; i < cfs.length; i++) {
                 HColumnDescriptor hColumnDescriptor = new HColumnDescriptor(cfs[i]);
-                hColumnDescriptor.setCompressionType(Compression.Algorithm.SNAPPY);
+//                hColumnDescriptor.setCompressionType(Compression.Algorithm.SNAPPY);
                 hColumnDescriptor.setMaxVersions(1);
                 tableDesc.addFamily(hColumnDescriptor);
             }

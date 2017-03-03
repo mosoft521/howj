@@ -18,7 +18,8 @@ public class HBasePutTest {
 
     @Before
     public void init() {
-        HBaseUtil.init("zkHost");
+//        HBaseUtil.init("zkHost");
+        HBaseUtil.init("slaver1:2181,slaver2:2181");
     }
 
     @Test
