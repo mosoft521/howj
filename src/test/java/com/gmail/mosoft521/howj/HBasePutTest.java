@@ -25,7 +25,7 @@ public class HBasePutTest {
     public void testPut() {
         Put put = new Put(Bytes.toBytes("rowKey"));
         put.addColumn(Bytes.toBytes("events"), Bytes.toBytes("severity"), Bytes.toBytes(new Random().nextInt(10) + ""));
-        HBase.put("logs", Arrays.asList(new Object[]{put}), true);
+        HBase.put("logs", Arrays.asList(new Put[]{put}), true);
     }
 
     @Test

@@ -17,7 +17,7 @@ public abstract class AbstractHBaseService implements HBaseService {
     }
 
     @Override
-    public void batchPut(final String tableName, final List<Put> puts, boolean waiting) {
+    public void batchPut(final String tableName, final List<? extends Put> puts, boolean waiting) {
     }
 
     @Override

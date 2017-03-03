@@ -1,6 +1,6 @@
 package com.gmail.mosoft521.howj;
 
-import cn.ngsoc.hbase.util.Md5Util;
+import com.gmail.mosoft521.howj.util.Md5Util;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.util.Bytes;
@@ -57,7 +57,7 @@ public class HBase {
      * @param puts      待提交参数
      * @param waiting   是否等待线程执行完成  true 可以及时看到结果, false 让线程继续执行，并跳出此方法返回调用方主程序
      */
-    public static void put(String tableName, List<Object> puts, boolean waiting) {
+    public static void put(String tableName, List<? extends Put> puts, boolean waiting) {
         hBaseService.batchPut(tableName, puts, waiting);
     }
 
