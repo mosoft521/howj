@@ -39,7 +39,7 @@ public class HBaseDeleteTest {
     private static long END_TIMESTAMP = System.currentTimeMillis();    // 数据结束时间
     private static int PAGE_SIZE = 100;     // 每次处理多少条数据
     private static int THREAD_COMSUME_PER_RECORDS = 10;     // 多线程每次处理多少数据
-    private static String zkHost = "bd132:2181,bd133:2181,bd134:2181";
+    private static String zkHost = "slaver1:2181,slaver2:2181";
     private static String autoGc = "false";
 
     private static ThreadPoolUtil threadPool = ThreadPoolUtil.init();       // 初始化线程池
